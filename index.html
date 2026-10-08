@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RM Livraison | Livrezon rapid ak serye</title>
+<meta name="description" content="RM Livraison — sèvis livrezon rapid, serye ak senp an Ayiti.">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#172033;background:#f6f8fb}
+header{background:#0b63ce;color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+.logo{font-size:25px;font-weight:800}nav a{color:#fff;text-decoration:none;margin-left:18px;font-weight:700}
+.hero{padding:75px 6%;background:linear-gradient(135deg,#0b63ce,#083b80);color:white}
+.hero h1{font-size:48px;max-width:700px;margin:0 0 15px}.hero p{font-size:20px;max-width:650px;line-height:1.6}
+.btn{display:inline-block;padding:14px 20px;border-radius:10px;text-decoration:none;font-weight:800;margin:8px 8px 0 0}
+.primary{background:#fff;color:#0b63ce}.wa{background:#19b86b;color:white}
+section{padding:55px 6%;max-width:1150px;margin:auto}h2{font-size:32px;text-align:center;margin-bottom:30px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:white;padding:25px;border-radius:16px;box-shadow:0 5px 20px #0000000d}.card h3{margin-top:0}
+form{background:white;padding:28px;border-radius:16px;box-shadow:0 5px 20px #0000000d;max-width:700px;margin:auto}
+label{display:block;font-weight:700;margin-top:15px}input,textarea,select{width:100%;padding:13px;margin-top:7px;border:1px solid #d6dce5;border-radius:9px;font-size:16px}textarea{min-height:110px}
+.submit{border:0;background:#0b63ce;color:white;padding:14px 20px;border-radius:9px;font-weight:800;font-size:16px;margin-top:20px;width:100%}
+.contact{text-align:center;background:#eaf3ff;max-width:none}.contact a{font-weight:800;color:#0b63ce}
+footer{background:#101827;color:#dce4ef;text-align:center;padding:25px}
+@media(max-width:750px){nav{display:none}.hero h1{font-size:36px}.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="logo">RM Livraison</div><nav><a href="#services">Sèvis</a><a href="#demande">Fè yon demann</a><a href="#contact">Kontak</a></nav></header>
+
+<main>
+<section class="hero">
+<h1>Nou livre pou ou, rapid ak serye.</h1>
+<p>Ou gen yon bagay pou voye bay yon moun? Kontakte RM Livraison. Nou pran demann ou, òganize livrezon an epi ede fè pakè a rive kote li dwe ale.</p>
+<a class="btn primary" href="#demande">Fè yon demann livrezon</a>
+<a class="btn wa" href="https://wa.me/50948223835" target="_blank">WhatsApp nou</a>
+</section>
+
+<section id="services">
+<h2>Sèvis RM Livraison</h2>
+<div class="cards">
+<div class="card"><h3>📦 Livrezon pakè</h3><p>Nou ede livre ti ak mwayen pakè bay destinatè a.</p></div>
+<div class="card"><h3>🛵 Livrezon rapid</h3><p>Bay enfòmasyon sou kote pou pran ak kote pou livre pou nou ka òganize sèvis la.</p></div>
+<div class="card"><h3>📲 Demann sou entènèt</h3><p>Ranpli fòm nan oswa kontakte nou dirèkteman sou WhatsApp.</p></div>
+</div>
+</section>
+
+<section id="demande">
+<h2>Fè yon demann livrezon</h2>
+<form id="deliveryForm">
+<label>Non ou</label><input id="name" required placeholder="Non konplè">
+<label>Nimewo telefòn</label><input id="phone" required placeholder="+509 ...">
+<label>Kote pou pran pakè a</label><input id="pickup" required placeholder="Adrès / zòn">
+<label>Kote pou livre pakè a</label><input id="dropoff" required placeholder="Adrès / zòn">
+<label>Ki sa w ap voye?</label><input id="item" required placeholder="Egzanp: dokiman, rad, ti pakè">
+<label>Detay anplis</label><textarea id="details" placeholder="Bay nenpòt enfòmasyon ki enpòtan"></textarea>
+<button class="submit" type="submit">Voye demann lan sou WhatsApp</button>
+</form>
+</section>
+
+<section id="contact" class="contact">
+<h2>Kontakte RM Livraison</h2>
+<p>📞 Dirèk: <a href="tel:+50935122464">+509 3512-2464</a></p>
+<p>💬 WhatsApp: <a href="https://wa.me/50948223835" target="_blank">+509 4822-3835</a></p>
+<a class="btn wa" href="https://wa.me/50948223835" target="_blank">Kòmanse yon konvèsasyon WhatsApp</a>
+</section>
+</main>
+
+<footer>© 2026 RM Livraison — Livrezon rapid ak serye.</footer>
+
+<script>
+document.getElementById('deliveryForm').addEventListener('submit', function(e){
+ e.preventDefault();
+ const n=document.getElementById('name').value, p=document.getElementById('phone').value;
+ const a=document.getElementById('pickup').value, d=document.getElementById('dropoff').value;
+ const i=document.getElementById('item').value, x=document.getElementById('details').value;
+ const msg=`Bonjou RM Livraison, mwen vle fè yon demann livrezon.%0A%0ANon: ${n}%0ATelefòn: ${p}%0AKote pou pran: ${a}%0AKote pou livre: ${d}%0AKontni: ${i}%0ADetay: ${x}`;
+ window.open('https://wa.me/50948223835?text='+encodeURIComponent(msg),'_blank');
+});
+</script>
+</body>
+</html>
