@@ -1,79 +1,363 @@
 <!doctype html>
-<html lang="fr">
+<html lang="ht">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RM Livraison | Livrezon rapid ak serye</title>
 <meta name="description" content="RM Livraison — sèvis livrezon rapid, serye ak senp an Ayiti.">
+<meta name="google-site-verification" content="KcBADEpeZurUdb9CiZjH3De6Ohgzw4cH_9kKPXvMTc0">
+<meta name="theme-color" content="#0a2a5e">
+<meta property="og:title" content="RM Livraison | Livrezon rapid ak serye">
+<meta property="og:description" content="Sèvis livrezon rapid, serye ak senp an Ayiti. Fè demann ou sou WhatsApp.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#172033;background:#f6f8fb}
-header{background:#0b63ce;color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
-.logo{font-size:25px;font-weight:800}nav a{color:#fff;text-decoration:none;margin-left:18px;font-weight:700}
-.hero{padding:75px 6%;background:linear-gradient(135deg,#0b63ce,#083b80);color:white}
-.hero h1{font-size:48px;max-width:700px;margin:0 0 15px}.hero p{font-size:20px;max-width:650px;line-height:1.6}
-.btn{display:inline-block;padding:14px 20px;border-radius:10px;text-decoration:none;font-weight:800;margin:8px 8px 0 0}
-.primary{background:#fff;color:#0b63ce}.wa{background:#19b86b;color:white}
-section{padding:55px 6%;max-width:1150px;margin:auto}h2{font-size:32px;text-align:center;margin-bottom:30px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:white;padding:25px;border-radius:16px;box-shadow:0 5px 20px #0000000d}.card h3{margin-top:0}
-form{background:white;padding:28px;border-radius:16px;box-shadow:0 5px 20px #0000000d;max-width:700px;margin:auto}
-label{display:block;font-weight:700;margin-top:15px}input,textarea,select{width:100%;padding:13px;margin-top:7px;border:1px solid #d6dce5;border-radius:9px;font-size:16px}textarea{min-height:110px}
-.submit{border:0;background:#0b63ce;color:white;padding:14px 20px;border-radius:9px;font-weight:800;font-size:16px;margin-top:20px;width:100%}
-.contact{text-align:center;background:#eaf3ff;max-width:none}.contact a{font-weight:800;color:#0b63ce}
-footer{background:#101827;color:#dce4ef;text-align:center;padding:25px}
-@media(max-width:750px){nav{display:none}.hero h1{font-size:36px}.cards{grid-template-columns:1fr}}
-</style><meta name="google-site-verification" content="KcBADEpeZurUdb9CiZjH3De6Ohgzw4cH_9kKPXvMTc0"<head/>
+/* ---------- Koulè ak baz ---------- */
+:root{
+  --ink:#0a2a5e;        /* ble fonse */
+  --blue:#0b63ce;       /* ble mak la */
+  --sun:#ffc83d;        /* jòn */
+  --paper:#f4f7fc;      /* fon paj la */
+  --white:#ffffff;
+  --text:#14213a;
+  --muted:#55627a;
+  --line:#d9e1ee;
+  --wa:#128c4b;         /* vèt WhatsApp */
+  --display:"Bricolage Grotesque","Trebuchet MS",Arial,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --wrap:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;font-family:var(--body);font-size:17px;line-height:1.6;color:var(--text);background:var(--paper);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;letter-spacing:-.02em}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
+
+/* ---------- Bouton ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;border-radius:999px;font-family:var(--body);font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn-sun{background:var(--sun);color:var(--ink);box-shadow:0 8px 22px rgba(255,200,61,.35)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 22px rgba(18,140,75,.3)}
+.btn-ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* ---------- Antèt ---------- */
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:22px;color:var(--ink);text-decoration:none}
+.logo b{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--ink);color:var(--sun);font-size:17px;letter-spacing:0}
+.top nav{display:flex;align-items:center;gap:26px}
+.top nav a{text-decoration:none;font-weight:600;font-size:16px;color:var(--text)}
+.top nav a:hover{color:var(--blue)}
+.top nav .btn{padding:11px 18px;font-size:15px;color:#fff}
+.top nav .btn:hover{color:#fff}
+
+/* ---------- Hero ---------- */
+.hero{background:radial-gradient(900px 500px at 85% 10%,#1257b0 0%,transparent 60%),var(--ink);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding-top:84px;padding-bottom:96px}
+.hero h1{font-size:clamp(2.5rem,6.2vw,4.6rem);font-weight:800}
+.hero p{margin-top:22px;font-size:1.15rem;max-width:34em;color:#d5e2f6}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+
+/* Tikè livrezon an */
+.ticket{position:relative;background:#fff;color:var(--text);border-radius:22px;padding:26px 26px 22px;transform:rotate(-2.5deg);box-shadow:0 30px 60px rgba(3,16,40,.45);max-width:380px;margin-left:auto}
+.ticket-head{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:16px;border-bottom:2px dashed var(--line)}
+.ticket-head strong{font-family:var(--display);font-size:1.25rem;color:var(--ink)}
+.ticket-head span{font-size:.9rem;color:var(--muted)}
+.route{position:relative;margin:22px 0 20px;padding-left:38px}
+.route::before{content:"";position:absolute;left:10px;top:12px;bottom:12px;border-left:3px dashed #b9c6da}
+.stop{position:relative}
+.stop + .stop{margin-top:54px}
+.stop::before{content:"";position:absolute;left:-38px;top:3px;width:23px;height:23px;border-radius:50%;background:#fff;border:5px solid var(--blue)}
+.stop.end::before{border-color:var(--sun);background:var(--ink)}
+.stop small{display:block;font-size:.85rem;color:var(--muted)}
+.stop strong{font-size:1.08rem}
+.rider{position:absolute;left:-4px;top:4px;font-size:28px;line-height:1;animation:ride 2.6s cubic-bezier(.6,0,.3,1) .5s both}
+@keyframes ride{from{top:4px}to{top:calc(100% - 34px)}}
+.ticket-foot{display:flex;align-items:center;gap:10px;padding-top:16px;border-top:2px dashed var(--line);font-weight:600;font-size:.95rem;color:var(--wa)}
+.ticket-foot svg{width:20px;height:20px}
+.ticket::before,.ticket::after{content:"";position:absolute;top:66px;width:22px;height:22px;border-radius:50%;background:var(--ink)}
+.ticket::before{left:-11px}
+.ticket::after{right:-11px}
+
+/* ---------- Seksyon ---------- */
+.block{padding:84px 0}
+.block h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;color:var(--ink)}
+.lead{margin-top:14px;color:var(--muted);max-width:36em}
+
+/* Sèvis */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.service{padding:34px 30px}
+.service + .service{border-left:1px solid var(--line)}
+.service .ico{display:grid;place-items:center;width:58px;height:58px;border-radius:16px;background:#e8f1fd;font-size:28px}
+.service h3{margin-top:20px;font-size:1.35rem;color:var(--ink)}
+.service p{margin-top:10px;color:var(--muted)}
+
+/* Demann */
+.request{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.request .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}
+.steps{list-style:none;margin:36px 0 0;padding:0;counter-reset:s}
+.steps li{position:relative;padding:0 0 30px 62px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--sun);font-family:var(--display);font-weight:800;font-size:1.1rem}
+.steps li:not(:last-child)::after{content:"";position:absolute;left:20px;top:48px;bottom:6px;border-left:2px dashed var(--line)}
+.steps strong{display:block;font-family:var(--display);font-size:1.2rem;color:var(--ink)}
+.steps span{color:var(--muted)}
+
+form{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:30px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:16px}
+label{display:block;font-weight:600;font-size:.95rem;margin-bottom:7px}
+label em{font-style:normal;font-weight:400;color:var(--muted)}
+input,textarea{width:100%;padding:14px 15px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font:inherit;font-size:16px;color:var(--text);transition:border-color .15s,box-shadow .15s}
+input::placeholder,textarea::placeholder{color:#93a0b6}
+input:focus,textarea:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 4px rgba(11,99,206,.15)}
+textarea{min-height:104px;resize:vertical}
+form .btn{width:100%;margin-top:6px;padding:17px 24px;font-size:17px}
+.form-note{margin-top:14px;font-size:.92rem;color:var(--muted);text-align:center}
+.form-note.ok{color:var(--wa);font-weight:600}
+
+/* Kontak */
+.contact{background:var(--ink);color:#fff}
+.contact h2{color:#fff}
+.contact .lead{color:#c9d8f0}
+.lines{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.line{display:flex;align-items:center;gap:18px;padding:24px 26px;border-radius:20px;text-decoration:none;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);transition:background .15s,transform .15s}
+.line:hover{background:rgba(255,255,255,.13);transform:translateY(-2px)}
+.line .ico{display:grid;place-items:center;flex:none;width:54px;height:54px;border-radius:50%;background:var(--sun);color:var(--ink)}
+.line.wa .ico{background:var(--wa);color:#fff}
+.line .ico svg{width:26px;height:26px}
+.line small{display:block;color:#c9d8f0;font-size:.92rem}
+.line strong{font-family:var(--display);font-size:1.5rem;letter-spacing:0}
+
+footer{background:#061b40;color:#a9bbd8;font-size:.95rem;padding:26px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* Ba aksyon sou telefòn */
+.dock{display:none}
+
+/* ---------- Telefòn ak tablèt ---------- */
+@media(max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:54px;padding-top:56px;padding-bottom:72px}
+  .ticket{margin:0 auto}
+  .request .wrap{grid-template-columns:1fr;gap:40px}
+  .services{grid-template-columns:1fr}
+  .service + .service{border-left:0;border-top:1px solid var(--line)}
+  .block{padding:64px 0}
+}
+@media(max-width:640px){
+  body{font-size:16px;padding-bottom:76px}
+  .top nav a:not(.btn){display:none}
+  .row,.lines{grid-template-columns:1fr}
+  .row{gap:0}
+  form{padding:22px 18px}
+  .hero .actions .btn{width:100%}
+  .line strong{font-size:1.3rem}
+  .dock{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .dock .btn{padding:14px 10px;font-size:15px;box-shadow:none}
+  .dock .call{background:var(--ink);color:#fff}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rider{animation:none;top:calc(100% - 34px)}
+  .btn,.line{transition:none}
+}
+</style>
+</head>
+
 <body>
-<header><div class="logo">RM Livraison</div><nav><a href="#services">Sèvis</a><a href="#demande">Fè yon demann</a><a href="#contact">Kontak</a></nav></header>
 
-<main>
-<section class="hero">
-<h1>Nou livre pou ou, rapid ak serye.</h1>
-<p>Ou gen yon bagay pou voye bay yon moun? Kontakte RM Livraison. Nou pran demann ou, òganize livrezon an epi ede fè pakè a rive kote li dwe ale.</p>
-<a class="btn primary" href="#demande">Fè yon demann livrezon</a>
-<a class="btn wa" href="https://wa.me/50948223835" target="_blank">WhatsApp nou</a>
-</section>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="RM Livraison, tounen anlè"><b>RM</b>Livraison</a>
+    <nav aria-label="Meni prensipal">
+      <a href="#services">Sèvis</a>
+      <a href="#demande">Fè yon demann</a>
+      <a href="#contact">Kontak</a>
+      <a class="btn btn-wa" href="https://wa.me/50948223835" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </div>
+</header>
 
-<section id="services">
-<h2>Sèvis RM Livraison</h2>
-<div class="cards">
-<div class="card"><h3>📦 Livrezon pakè</h3><p>Nou ede livre ti ak mwayen pakè bay destinatè a.</p></div>
-<div class="card"><h3>🛵 Livrezon rapid</h3><p>Bay enfòmasyon sou kote pou pran ak kote pou livre pou nou ka òganize sèvis la.</p></div>
-<div class="card"><h3>📲 Demann sou entènèt</h3><p>Ranpli fòm nan oswa kontakte nou dirèkteman sou WhatsApp.</p></div>
-</div>
-</section>
+<main id="top">
 
-<section id="demande">
-<h2>Fè yon demann livrezon</h2>
-<form id="deliveryForm">
-<label>Non ou</label><input id="name" required placeholder="Non konplè">
-<label>Nimewo telefòn</label><input id="phone" required placeholder="+509 ...">
-<label>Kote pou pran pakè a</label><input id="pickup" required placeholder="Adrès / zòn">
-<label>Kote pou livre pakè a</label><input id="dropoff" required placeholder="Adrès / zòn">
-<label>Ki sa w ap voye?</label><input id="item" required placeholder="Egzanp: dokiman, rad, ti pakè">
-<label>Detay anplis</label><textarea id="details" placeholder="Bay nenpòt enfòmasyon ki enpòtan"></textarea>
-<button class="submit" type="submit">Voye demann lan sou WhatsApp</button>
-</form>
-</section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Nou livre pou ou, rapid ak serye.</h1>
+        <p>Ou gen yon bagay pou voye bay yon moun? Nou pran demann ou, nou òganize livrezon an epi nou fè pakè a rive kote li dwe ale.</p>
+        <div class="actions">
+          <a class="btn btn-sun" href="#demande">Fè yon demann livrezon</a>
+          <a class="btn btn-ghost" href="https://wa.me/50948223835" target="_blank" rel="noopener">Ekri nou sou WhatsApp</a>
+        </div>
+      </div>
 
-<section id="contact" class="contact">
-<h2>Kontakte RM Livraison</h2>
-<p>📞 Dirèk: <a href="tel:+50935122464">+509 3512-2464</a></p>
-<p>💬 WhatsApp: <a href="https://wa.me/50948223835" target="_blank">+509 4822-3835</a></p>
-<a class="btn wa" href="https://wa.me/50948223835" target="_blank">Kòmanse yon konvèsasyon WhatsApp</a>
-</section>
+      <div class="ticket" aria-hidden="true">
+        <div class="ticket-head"><strong>Bon livrezon</strong><span>RM Livraison</span></div>
+        <div class="route">
+          <span class="rider">🛵</span>
+          <div class="stop"><small>Kote pou pran</small><strong>Adrès ou</strong></div>
+          <div class="stop end"><small>Kote pou livre</small><strong>Destinatè a</strong></div>
+        </div>
+        <div class="ticket-foot">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Konfimasyon sou WhatsApp
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SÈVIS -->
+  <section id="services" class="block">
+    <div class="wrap">
+      <h2>Sèvis RM Livraison</h2>
+      <p class="lead">Twa fason nou ka ede w voye sa w bezwen an.</p>
+      <div class="services">
+        <article class="service">
+          <div class="ico" aria-hidden="true">📦</div>
+          <h3>Livrezon pakè</h3>
+          <p>Nou livre ti pakè ak mwayen pakè bay destinatè a.</p>
+        </article>
+        <article class="service">
+          <div class="ico" aria-hidden="true">🛵</div>
+          <h3>Livrezon rapid</h3>
+          <p>Di nou kote pou pran ak kote pou livre, epi nou òganize sèvis la san pèdi tan.</p>
+        </article>
+        <article class="service">
+          <div class="ico" aria-hidden="true">📲</div>
+          <h3>Demann sou entènèt</h3>
+          <p>Ranpli fòm nan oswa ekri nou dirèkteman sou WhatsApp.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMANN -->
+  <section id="demande" class="block request">
+    <div class="wrap">
+      <div>
+        <h2>Fè yon demann livrezon</h2>
+        <p class="lead">Sa pran mwens pase de minit.</p>
+        <ol class="steps">
+          <li><strong>Ranpli fòm nan</strong><span>Bay adrès yo ak sa w ap voye a.</span></li>
+          <li><strong>Voye l sou WhatsApp</strong><span>Demann lan louvri tou pare nan WhatsApp, ou jis peze « Voye ».</span></li>
+          <li><strong>Nou konfime epi nou livre</strong><span>Nou reponn ou pou konfime detay yo, apre sa pakè a pran wout.</span></li>
+        </ol>
+      </div>
+
+      <form id="deliveryForm" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="name">Non ou</label>
+            <input id="name" name="name" required autocomplete="name" placeholder="Non konplè">
+          </div>
+          <div class="field">
+            <label for="phone">Nimewo telefòn</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" required autocomplete="tel" placeholder="+509 ...">
+          </div>
+        </div>
+        <div class="field">
+          <label for="pickup">Kote pou pran pakè a</label>
+          <input id="pickup" name="pickup" required placeholder="Adrès / zòn">
+        </div>
+        <div class="field">
+          <label for="dropoff">Kote pou livre pakè a</label>
+          <input id="dropoff" name="dropoff" required placeholder="Adrès / zòn">
+        </div>
+        <div class="field">
+          <label for="item">Ki sa w ap voye?</label>
+          <input id="item" name="item" required placeholder="Egzanp: dokiman, rad, ti pakè">
+        </div>
+        <div class="field">
+          <label for="details">Detay anplis <em>(pa obligatwa)</em></label>
+          <textarea id="details" name="details" placeholder="Bay nenpòt enfòmasyon ki enpòtan"></textarea>
+        </div>
+        <button class="btn btn-wa" type="submit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.100-5.700A8.400 8.400 0 1 1 21 11.500Z"/></svg>
+          Voye demann lan sou WhatsApp
+        </button>
+        <p class="form-note" id="formNote" role="status">N ap reponn ou sou WhatsApp pou konfime livrezon an.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="contact" class="block contact">
+    <div class="wrap">
+      <h2>Kontakte RM Livraison</h2>
+      <p class="lead">Rele nou oswa ekri nou, jan ki pi fasil pou ou.</p>
+      <div class="lines">
+        <a class="line" href="tel:+50935122464">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.900v3a2 2 0 0 1-2.200 2 19.800 19.800 0 0 1-8.600-3.100 19.500 19.500 0 0 1-6-6A19.800 19.800 0 0 1 2.100 4.200 2 2 0 0 1 4.100 2h3a2 2 0 0 1 2 1.700c.100 1 .400 1.900.700 2.800a2 2 0 0 1-.500 2.100L8.100 9.900a16 16 0 0 0 6 6l1.300-1.300a2 2 0 0 1 2.100-.400c.900.300 1.800.600 2.800.700a2 2 0 0 1 1.700 2Z"/></svg></span>
+          <span><small>Rele dirèk</small><strong>+509 3512-2464</strong></span>
+        </a>
+        <a class="line wa" href="https://wa.me/50948223835" target="_blank" rel="noopener">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.500a8.400 8.400 0 0 1-12.300 7.400L3 21l2.100-5.700A8.400 8.400 0 1 1 21 11.500Z"/></svg></span>
+          <span><small>WhatsApp</small><strong>+509 4822-3835</strong></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<footer>© 2026 RM Livraison — Livrezon rapid ak serye.</footer>
+<footer>
+  <div class="wrap">
+    <span>© 2026 RM Livraison</span>
+    <span>Livrezon rapid ak serye an Ayiti</span>
+  </div>
+</footer>
+
+<!-- Ba aksyon ki rete anba ekran an sou telefòn -->
+<div class="dock">
+  <a class="btn call" href="tel:+50935122464">Rele nou</a>
+  <a class="btn btn-wa" href="https://wa.me/50948223835" target="_blank" rel="noopener">WhatsApp</a>
+</div>
 
 <script>
-document.getElementById('deliveryForm').addEventListener('submit', function(e){
- e.preventDefault();
- const n=document.getElementById('name').value, p=document.getElementById('phone').value;
- const a=document.getElementById('pickup').value, d=document.getElementById('dropoff').value;
- const i=document.getElementById('item').value, x=document.getElementById('details').value;
- const msg=`Bonjou RM Livraison, mwen vle fè yon demann livrezon.%0A%0ANon: ${n}%0ATelefòn: ${p}%0AKote pou pran: ${a}%0AKote pou livre: ${d}%0AKontni: ${i}%0ADetay: ${x}`;
- window.open('https://wa.me/50948223835?text='+encodeURIComponent(msg),'_blank');
-});
+(function () {
+  var WHATSAPP = '50948223835';
+  var form = document.getElementById('deliveryForm');
+  var note = document.getElementById('formNote');
+  var val = function (id) { return document.getElementById(id).value.trim(); };
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Tcheke chan obligatwa yo
+    var missing = form.querySelector('input:invalid');
+    if (missing) {
+      note.className = 'form-note';
+      note.textContent = 'Tanpri ranpli tout chan obligatwa yo anvan ou voye demann lan.';
+      missing.focus();
+      return;
+    }
+
+    var lines = [
+      'Bonjou RM Livraison, mwen vle fè yon demann livrezon.',
+      '',
+      'Non: ' + val('name'),
+      'Telefòn: ' + val('phone'),
+      'Kote pou pran: ' + val('pickup'),
+      'Kote pou livre: ' + val('dropoff'),
+      'Kontni: ' + val('item')
+    ];
+    if (val('details')) lines.push('Detay: ' + val('details'));
+
+    window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+
+    note.className = 'form-note ok';
+    note.textContent = 'WhatsApp ap louvri ak demann ou an. Peze « Voye » ladan l pou fini.';
+  });
+})();
 </script>
 </body>
 </html>
